@@ -298,7 +298,7 @@ func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMe
    let attributedString: NSMutableAttributedString = NSMutableAttributedString(string: stringValue)
    attributedString.setColor(color: UIColor.systemTeal, forText: "Hue   : \((360 * h).rounded()) \r")
    attributedString.setColor(color: UIColor.systemYellow, forText:  "Sat : \((1000 * s).rounded()/10)\r")
-   attributedString.setColor(color: UIColor.white, forText: "Brt  : \((1000 * b).rounded()/10)")
+   attributedString.setColor(color: UIColor.systemIndigo, forText: "Brt  : \((1000 * b).rounded()/10)")
        values.attributedText = attributedString
    }
    

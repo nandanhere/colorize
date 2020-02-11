@@ -66,23 +66,27 @@ hexValue.frame = CGRect(x: Int(self.view.frame.maxX /  2 ) - 75, y: 21, width: 1
     override func viewDidLoad() {
         super.viewDidLoad()
        setupUI()
-       
-     changeToColorType()
+     
+      changeToColorType()
      }
-
-
-
-override func viewDidAppear(_ animated: Bool) {
+ 
+@objc func getReady() {
 discoveredColor = tempColor
 Display.text = discoveredColor?.name
 Display.backgroundColor = discoveredColor
 hexValue.text = discoveredColor?.hexString
-halfAliveToSlider()
+ halfAliveToSlider()
+
 }
+ 
 
-
+override func viewDidAppear(_ animated: Bool) {
+getReady()
+}
 func halfAliveToSlider()
-{ if  truth
+{ changeToColorType()
+
+if  truth
 {
 let color = discoveredColor?.components
  
@@ -118,7 +122,7 @@ dataBufferPage.tempColor = discoveredColor
 else
 {
 return
-}
+} 
 }
 
 
@@ -186,7 +190,19 @@ greenType.text = "0.5"
 blueType.text = "0.5"
 RedSlider.tintColor = .systemTeal
 GreenSlider.tintColor = .systemYellow
-BlueSlider.tintColor = .white
+BlueSlider.tintColor = .systemIndigo
+}
+else
+{
+RedLabel.text = "Red"
+GreenLabel.text = "Green"
+BlueLabel.text = "Blue"
+redType.text = "0.5"
+greenType.text = "0.5"
+blueType.text = "0.5"
+RedSlider.tintColor = .systemRed
+GreenSlider.tintColor = .systemGreen
+BlueSlider.tintColor = .systemTeal
 }
 }
 func ChangeDisplayColor(){

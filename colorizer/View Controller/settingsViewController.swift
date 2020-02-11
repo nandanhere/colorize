@@ -33,6 +33,7 @@ else
 truth = false
 hsb.setOn(true, animated: true)
 }
+ 
 }
 
 @IBAction func hsb(_ sender: Any) {
@@ -44,8 +45,17 @@ else{
 truth = true
 rgb.setOn(true, animated: true)
 }
+ 
 }
-
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  // Get the presented navigationController and the view controller it contains
+  let navigationController = segue.destination as! UINavigationController
+  let modalViewController = navigationController.topViewController
+    
+  // Set the modal view controller to be the delegate of the presentationController for this presentation,
+  // so that modal view controller can respond to attempted dismissals
+navigationController.presentationController?.delegate = modalViewController as? UIAdaptivePresentationControllerDelegate
+}
  
 
  
