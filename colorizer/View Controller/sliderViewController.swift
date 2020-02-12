@@ -7,6 +7,7 @@
 //
 
 import UIKit
+var tt = false
 
 class sliderViewController: UIViewController {
 
@@ -31,7 +32,6 @@ var GreenColor : Float = 0
 var Hue : Float = 0
 var Saturation : Float = 0
 var Brightness : Float = 0
-
 var tempColor : UIColor!
 @IBAction func unwindToSlider(segue: UIStoryboardSegue) {
     //nothing goes here
@@ -133,38 +133,64 @@ performSegue(withIdentifier: "slideToBuffer", sender: nil)
 }
 
 @IBAction func RedFunc(_ sender: Any) {
-ChangeColor()
+if tt { selfInputButton(self)}
+ ChangeColor()
 ChangeLabelTxt()
 discoveredColor = Display.backgroundColor
 }
 @IBAction func GreenFunc(_ sender: Any) {
-ChangeColor()
+if tt { selfInputButton(self)}
+ ChangeColor()
 ChangeLabelTxt()
 discoveredColor = Display.backgroundColor
 
 }
 
 @IBAction func BlueFunc(_ sender: Any) {
-ChangeColor()
+if tt { selfInputButton(self)}
+ ChangeColor()
 ChangeLabelTxt()
 discoveredColor = Display.backgroundColor
 
 }
 
 @IBAction func selfInputButton(_ sender: Any) {
-ChangeColor()
+ ChangeColor()
+guard Float(redType.text!) != nil else {Display.text = "Invalid Input" ; return}
+guard Float(greenType.text!) != nil else {Display.text = "Invalid Input" ; return}
+guard Float(blueType.text!) != nil else {Display.text = "Invalid Input" ; return}
+
+
+if tt {
+if truth {
+redType.text = String(Float((discoveredColor?.components.red)!) * 255)
+greenType.text = String(Float((discoveredColor?.components.green)!) * 255)
+blueType.text = String(Float((discoveredColor?.components.blue)!) * 255)
+}
+else{
+redType.text = String(Float((discoveredColor?.hsba.hue)!) * 360)
+greenType.text = String(Float((discoveredColor?.hsba.saturation)!) * 100)
+blueType.text = String(Float((discoveredColor?.hsba.brightness)!) * 100)
+}
+tt = false
+}
 if truth
-{RedSlider.setValue((Float(redType.text!)! / 255), animated: true)
+{
+RedSlider.setValue((Float(redType.text!)! / 255), animated: true)
 GreenSlider.setValue((Float(greenType.text!)! / 255), animated: true)
 BlueSlider.setValue((Float(blueType.text!)! / 255), animated: true)
+ChangeColor()
+
 }
 else
 {
 RedSlider.setValue(((Float(redType.text!)! / 360)), animated: true)
 GreenSlider.setValue((Float(greenType.text!)! / 100  ), animated: true)
 BlueSlider.setValue((Float(blueType.text!)! / 100 ), animated: true)
-}
 ChangeColor()
+
+}
+changeToColorType()
 
 }
 
@@ -185,9 +211,7 @@ if !truth{
 RedLabel.text = "Hue"
 GreenLabel.text = "Saturation"
 BlueLabel.text = "Brightness"
-redType.text = "0.5"
-greenType.text = "0.5"
-blueType.text = "0.5"
+ 
 RedSlider.tintColor = .systemTeal
 GreenSlider.tintColor = .systemYellow
 BlueSlider.tintColor = .systemIndigo
@@ -197,9 +221,7 @@ else
 RedLabel.text = "Red"
 GreenLabel.text = "Green"
 BlueLabel.text = "Blue"
-redType.text = "0.5"
-greenType.text = "0.5"
-blueType.text = "0.5"
+ 
 RedSlider.tintColor = .systemRed
 GreenSlider.tintColor = .systemGreen
 BlueSlider.tintColor = .systemTeal

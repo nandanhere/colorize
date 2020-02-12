@@ -114,6 +114,15 @@ self.dismiss(animated: true) {
 }
 }
 
+@IBAction func shareButton(_ sender: Any) {
+let SharingVC = UIActivityViewController(activityItems: ["I discovered this brand new color called \((discoveredColor?.name)!) with its hexcode as \((discoveredColor?.hexString)!).You too can do that! Just search 'colorizer' in the app store and discover the artist in you!"], applicationActivities: nil)
+if let pop = SharingVC.popoverPresentationController{
+pop.sourceView = self.view
+pop.sourceRect = (sender as AnyObject).frame
+
+}
+self.present(SharingVC, animated: true, completion: nil)
+}
 
      
 

@@ -33,7 +33,7 @@ else
 truth = false
 hsb.setOn(true, animated: true)
 }
- 
+ tt = true
 }
 
 @IBAction func hsb(_ sender: Any) {
@@ -45,7 +45,7 @@ else{
 truth = true
 rgb.setOn(true, animated: true)
 }
- 
+ tt = true
 }
 override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
   // Get the presented navigationController and the view controller it contains
