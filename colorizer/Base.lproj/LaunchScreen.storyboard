@@ -15,15 +15,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="starter" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ij7-S3-zFM">
-                                <rect key="frame" x="134" y="359" width="147" height="178"/>
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="11" scale="small"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starter" translatesAutoresizingMaskIntoConstraints="NO" id="Xon-GI-xiN">
+                                <rect key="frame" x="178.5" y="415" width="57" height="76.5"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Ij7-S3-zFM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tKd-Al-jsR"/>
-                            <constraint firstItem="Ij7-S3-zFM" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="wSt-sY-PD7"/>
+                            <constraint firstItem="Xon-GI-xiN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ja3-mc-WLV"/>
+                            <constraint firstItem="Xon-GI-xiN" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="lXc-IP-YeP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -34,6 +33,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="starter" width="314" height="440.5"/>
+        <image name="starter" width="57" height="76.5"/>
     </resources>
 </document>

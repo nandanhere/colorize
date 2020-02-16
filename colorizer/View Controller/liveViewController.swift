@@ -195,7 +195,7 @@ extractorButton.addTarget(self, action: #selector(liveViewController.goToResultB
     override func viewDidLoad() {
         super.viewDidLoad()
                 setupUI()
-                self.CreateUI()
+//                self.CreateUI()
         // Do any additional setup after loading the view.
     }
 
